@@ -1,0 +1,45 @@
+<!--<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>-->
+
+<!--
+<textarea (keyup)="doIt()" [(ngModel)]="mess" style="width:600px;"></textarea>
+
+<div *ngFor="let x of data">
+    <span>{{x.tag}}</span> <input type="text" [(ngModel)]="x.adjust"/>
+</div>
+<button (click)="parseIt()">Parse</button>
+<div><textarea>{{answer}}</textarea></div>-->
+<div class="container">
+	<div class="row">
+		<h2 class="col-12" style="text-align:center;">AUTO COVER LETTER</h2>
+		<div class="alert alert-info col-12" role="alert">
+			Customize your cover letter for any job. Highlight any text, click the <strong>[(selection)]</strong> button, type in what should replace the marker and click the submit button. 
+		</div>
+	</div>
+	<div class="row animated fadeInLeft" [ngClass]="{'hide': !edit}">
+		<div class="col-lg-9 col-md-9 center-align">
+			<textarea (keyup)="doIt()" [(ngModel)]="mess" style="height:400px;width:100%;" class="form-control"></textarea>
+			 <button class="btn btn-primary" type="submit" (click)="parseIt()">Submit
+			 </button>
+			<button class="btn btn-primary" (click)="getSelection()">[(selection)]</button>
+		</div>
+		<div class="col-lg-3 col-md-3">
+			<div class="form-group row" *ngFor="let x of data">
+				<label class="col-5"><strong>{{x.tag}}:</strong></label> 
+				<div class="col-7">
+					<input type="text" class="form-control" [(ngModel)]="x.adjust"/>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="row animated fadeIn" [ngClass]="{'hide': edit}">
+		<textarea class="form-control" style="height:400px;width:100%;">{{answer}}</textarea>
+		<button class="btn btn-primary" type="submit" (click)="edit = true">Back to Template
+			 </button>
+		<!--<button class="btn btn-primary">Copy to Clipboard</button>-->
+	</div>
+</div>

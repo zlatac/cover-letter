@@ -134,6 +134,11 @@ Ida Hoo
 		  this.doIt(); //defualt run original message
 	  }
   }
+  
+  copyClipboard = function(elem){
+	  //window.document.querySelectorAll('.' + elem)[0].select();
+	  //document.execCommand('copy');
+  }
     
 }
 

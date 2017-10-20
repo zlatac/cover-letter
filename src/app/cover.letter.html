@@ -23,9 +23,8 @@
 	<div class="row animated fadeInLeft" [ngClass]="{'hide': !edit}">
 		<div class="col-lg-9 col-md-9 center-align">
 			<textarea (keyup)="doIt()" [(ngModel)]="mess" style="height:400px;width:100%;" class="form-control"></textarea>
-			 <button class="btn btn-primary" type="submit" (click)="parseIt()">Submit
-			 </button>
-			<button class="btn btn-primary" (click)="getSelection()">[(selection)]</button>
+			<button class="btn btn-primary mr-2" (click)="getSelection()">[(selection)]</button>
+			<button class="btn btn-primary" type="submit" (click)="parseIt()">Submit</button>
 		</div>
 		<div class="col-lg-3 col-md-3">
 			<div class="form-group row" *ngFor="let x of data">
@@ -37,9 +36,8 @@
 		</div>
 	</div>
 	<div class="row animated fadeIn" [ngClass]="{'hide': edit}">
-		<textarea class="form-control" style="height:400px;width:100%;">{{answer}}</textarea>
-		<button class="btn btn-primary" type="submit" (click)="edit = true">Back to Template
-			 </button>
-		<!--<button class="btn btn-primary">Copy to Clipboard</button>-->
+		<textarea class="form-control result" style="height:400px;width:100%;">{{answer}}</textarea>
+		<button class="btn btn-primary mr-2" type="submit" (click)="edit = true">Back to Template</button>
+		<button class="btn btn-primary" onClick="document.querySelector('.result').select();document.execCommand('copy');">Copy to Clipboard</button>
 	</div>
 </div>
